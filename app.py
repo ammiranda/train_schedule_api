@@ -9,6 +9,7 @@ app = Flask(__name__)
 inner_db = SQLAlchemy(app)
 db = Database(inner_db)
 
+
 class TrainSchema(Schema):
     id = fields.String(required=True, validate=Regexp(r"^[a-zA-Z0-9]{1,4}$"))
     schedules = fields.List(fields.Time(), required=True)
@@ -32,7 +33,7 @@ def add_train():
     #     db.set(result.key, result)
     # except:
 
-    return jsonify(request_data)
+    return jsonify(result)
 
 
 @app.route('/trains/<string:train_id>')

@@ -17,8 +17,9 @@ services:
     environment:
       POSTGRES_USER: username
       POSTGRES_PASSWORD: password
-      POSTGRES_DB: default_database
-    volumes: /var/lib/postgres:/var/lib/postgres
+      POSTGRES_DB: trains
+    volumes: 
+      - /var/lib/postgres:/var/lib/postgres
     networks:
       - app_net
 networks:
